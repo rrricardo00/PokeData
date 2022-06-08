@@ -1,5 +1,15 @@
 import React from 'react'
 
-const Api = React.createContext('')
+export const Api = React.createContext('')
 
-export default Api
+export const ApiStorage = ({ children }) => {
+    return (
+        <Api.Provider value={
+            {
+                get: 'https://pokeapi.co/api/v2/pokemon'
+            }
+        }>
+            {children}
+        </Api.Provider>
+    )
+}
