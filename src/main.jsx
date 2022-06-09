@@ -1,13 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {ApiStorage} from './API/Api'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ApiStorage } from './API/Api'
 import App from './Components/App'
+import NotFound from './Components/NotFound'
+import Pokemon from './Components/Pokemon'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <BrowserRouter>
     <ApiStorage>
-      <App />
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='pokemon/:id' element={<Pokemon />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </ApiStorage>
 
-  </React.StrictMode>
+  </BrowserRouter>
 )

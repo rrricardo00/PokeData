@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React from 'react'
 import { Api } from '../API/Api'
+import {Div, Section} from '../Styles/Style'
+import Head from './Head'
 
 const App = () => {
 
@@ -23,15 +25,16 @@ const App = () => {
   }, [api])
 
   return (
-    <section>
+    <Section>
+      <Head title='Main' description='Tela principal da pokédex' />
       {pokemons.map((pokemon, index) => {
         return (
-          <div key={index}>
+          <Div key={index}>
             {pokemon.name}
-          </div>
+          </Div>
         )
       })}
-    </section>
+    </Section>
   )
 }
 

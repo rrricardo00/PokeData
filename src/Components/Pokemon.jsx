@@ -1,9 +1,12 @@
 import React from 'react'
-import styles from './Pokemon.module.css'
+import { Section } from '../Styles/Style'
+import Head from './Head'
 
 const Pokemon = () => {
   return (
-    <div>Pokemon</div>
+    <Section>
+      <Head title='Pokémon' description='Tela principal do pokémon' />
+    </Section>
   )
 }
 
