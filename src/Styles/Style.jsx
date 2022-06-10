@@ -92,6 +92,7 @@ gap: ${({ gap }) => gap};
 padding: ${({ padding }) => padding};
 border-radius: ${({ borderRadius }) => borderRadius};
 justify-content: ${({justifyContent}) => justifyContent};
+grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 `
 
 export const P = styled.p``

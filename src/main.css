@@ -3,7 +3,7 @@ html{
     padding: 0;
 }
 
-/* body{
-    background: url('public/assets/imgs/bg-forest.jpg') no-repeat;
-    background-size: cover;
-} */
+.active{
+    font-weight: 900;
+    color: #EF5350;
+}

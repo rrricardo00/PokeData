@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { Api } from '../API/Api'
 import { Card, Img, Pcard, Section, DivCard, Div, ImgCard } from '../Styles/Style'
 import Head from './Head'
+import Header from './Header'
+import Search from './Search'
 
 const App = () => {
 
@@ -26,28 +28,32 @@ const App = () => {
   }, [api])
 
   return (
-    <Section display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
+    <Section>
+   
       <Head title='Main' description='Tela principal da pokédex' />
-      {pokemons.map((pokemon, index) => {
-        return (
-          <Link to={`pokemon/${index + 1}`} key={index}>
-            <Card>
-              <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg`} />
-              <DivCard>
-                <Div display="flex" placeItems="center">
-                  <Div>
-                    <ImgCard src="public/assets/svg/pokeball.svg"/>
+      <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
+        {pokemons.map((pokemon, index) => {
+          return (
+            <Link to={`pokemon/${index + 1}`} key={index}>
+              <Card>
+                <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg`} />
+                <DivCard>
+                  <Div display="flex" placeItems="center">
+                    <Div>
+                      <ImgCard src="public/assets/svg/pokeball.svg" />
+                    </Div>
+                    <Div>
+                      <Pcard>{`${pokemon.name}`}</Pcard>
+                    </Div>
                   </Div>
-                  <Div>
-                    <Pcard>{`${pokemon.name}`}</Pcard>
-                  </Div>
-                </Div>
-              </DivCard>
-            </Card>
-          </Link>
-        )
-      })}
+                </DivCard>
+              </Card>
+            </Link>
+          )
+        })}
+      </Div>
     </Section>
+
   )
 }
 

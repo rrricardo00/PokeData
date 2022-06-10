@@ -7,10 +7,12 @@ import App from './Components/App'
 import NotFound from './Components/NotFound'
 import Pokemon from './Components/Pokemon'
 import { MainContainer } from './Styles/Style'
+import Header from './Components/Header'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <MainContainer>
+      <Header />
       <ApiStorage>
         <Routes>
           <Route path='/' element={<App />} />
