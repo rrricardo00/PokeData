@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContainer = styled.section`
   width: 800px;
   margin: 0 auto;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     width: 100%;
   }
 `
@@ -40,7 +40,7 @@ display: ${({ display }) => display};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 gap: ${({ gap }) => gap};
 position: relative;
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,6 +57,7 @@ export const DivCard = styled.div`
   color: #fff;
   width: 25px;
   box-sizing: border-box;
+  transition: all .3s ease-in-out;
 `
 
 export const Card = styled.div`
@@ -73,7 +74,7 @@ filter: drop-shadow(2px 2px 3px #3761A8);
   transition: all .2s ease-in-out;
 
   ${DivCard}{
-    transition: all .3s ease-in;
+    transition: all .3s ease-in-out;
     width: 100%;
     display: flex;
     justify-content: center;
