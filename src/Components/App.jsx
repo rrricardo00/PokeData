@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Api } from '../API/Api'
-import { Card, Img, P, Section } from '../Styles/Style'
+import { Card, Img, Pcard, Section, DivCard, Div, ImgCard } from '../Styles/Style'
 import Head from './Head'
 
 const App = () => {
@@ -30,10 +30,19 @@ const App = () => {
       <Head title='Main' description='Tela principal da pokédex' />
       {pokemons.map((pokemon, index) => {
         return (
-          <Link to={`pokemon/${index+1}`} key={index}>
+          <Link to={`pokemon/${index + 1}`} key={index}>
             <Card>
               <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg`} />
-              <P>{pokemon.name}</P>
+              <DivCard>
+                <Div display="flex" placeItems="center">
+                  <Div>
+                    <ImgCard src="public/assets/svg/pokeball.svg"/>
+                  </Div>
+                  <Div>
+                    <Pcard>{`${pokemon.name}`}</Pcard>
+                  </Div>
+                </Div>
+              </DivCard>
             </Card>
           </Link>
         )

@@ -26,19 +26,37 @@ export const Img = styled.img`
   display: block;
   width: 260px;
   height: 260px;
-  
+`
+
+export const ImgCard = styled.img`
+  display: block;
+  width: 20px;
+  margin-right: 2px;
+ 
 `
 
 export const Section = styled.section`
 display: ${({ display }) => display};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 gap: ${({ gap }) => gap};
-
+position: relative;
 @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+`
+
+export const DivCard = styled.div`
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  background: tomato;
+  padding: 2px 3px;
+  border-radius: 2px;
+  color: #fff;
+  width: 25px;
+  box-sizing: border-box;
 `
 
 export const Card = styled.div`
@@ -48,9 +66,21 @@ flex-direction:column;
 place-items:center;  
 padding: 10px;
 border-radius: 4px;
+filter: drop-shadow(2px 2px 3px #3761A8);
 &:hover{
-  box-shadow:2px 2px 10px #e2e2e2, 4px 4px 20px #e2e2e2;
+  box-shadow:inset 2px 2px 10px #3761A8, 4px 4px 20px #3761A8;
+  transform: scale(1.1);
   transition: all .2s ease-in-out;
+
+  ${DivCard}{
+    transition: all .3s ease-in;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  p{
+    margin: 0;
+  }
 }
 `
 export const Div = styled.div`
@@ -60,5 +90,14 @@ place-items: ${({ placeItems }) => placeItems};
 gap: ${({ gap }) => gap};
 padding: ${({ padding }) => padding};
 border-radius: ${({ borderRadius }) => borderRadius};
+justify-content: ${({justifyContent}) => justifyContent};
 `
+
 export const P = styled.p``
+
+export const Pcard = styled.p`
+margin: 0;
+text-transform: capitalize;
+`
+
+
