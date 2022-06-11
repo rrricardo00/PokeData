@@ -2,10 +2,10 @@ import axios from 'axios'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Api } from '../API/Api'
-import { Card, Img, Pcard, Section, DivCard, Div, ImgCard } from '../Styles/Style'
+import { Card, Img, Pcard, SectionCard, DivCard, Div, ImgCard } from '../Styles/Style'
 import Head from './Head'
-import Header from './Header'
-import Search from './Search'
+import Load from './Load'
+
 
 const App = () => {
 
@@ -17,18 +17,23 @@ const App = () => {
   React.useEffect(() => {
     const get = async () => {
       try {
+        api.setLoad(true)
         const response = await axios.get(`${api.get}?limit=${limit}`)
         setPokemons(response.data.results)
+        api.setLoad(false)
         console.log(response)
       } catch (error) {
         console.log(error)
+        api.setLoad(false)
       }
     }
     get()
-  }, [api])
+  }, [])
+
+  if (api.load) return <Load/>
 
   return (
-    <Section>
+    !api.load && <SectionCard>
    
       <Head title='Main' description='Tela principal da pokédex' />
       <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
@@ -40,7 +45,7 @@ const App = () => {
                 <DivCard>
                   <Div display="flex" placeItems="center">
                     <Div>
-                      <ImgCard src="public/assets/svg/pokeball.svg" />
+                      <ImgCard src="assets/svg/pokeball.svg" />
                     </Div>
                     <Div>
                       <Pcard>{`${pokemon.name}`}</Pcard>
@@ -52,7 +57,7 @@ const App = () => {
           )
         })}
       </Div>
-    </Section>
+    </SectionCard>
 
   )
 }
