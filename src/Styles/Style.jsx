@@ -65,6 +65,22 @@ position: relative;
     align-items: center;
   }
 `
+export const SectionHeader = styled.section`
+display: ${({ display }) => display};
+grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
+gap: ${({ gap }) => gap};
+position: relative;
+margin: 50px 0;
+>div{
+flex: 1;
+}
+
+@media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`
 export const SectionCard = styled.section`
 display: ${({ display }) => display};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
@@ -131,6 +147,12 @@ border-radius: ${({ borderRadius }) => borderRadius};
 justify-content: ${({ justifyContent }) => justifyContent};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 z-index: ${({ zIndex }) => zIndex};
+
+@media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const P = styled.p``
 

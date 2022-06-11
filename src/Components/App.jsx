@@ -12,13 +12,12 @@ const App = () => {
   const api = React.useContext(Api)
 
   const [pokemons, setPokemons] = React.useState([])
-  const [limit, setLimit] = React.useState(12)
 
   React.useEffect(() => {
     const get = async () => {
       try {
         api.setLoad(true)
-        const response = await axios.get(`${api.get}?limit=${limit}`)
+        const response = await axios.get(`${api.get}?limit=${api.limit}`)
         setPokemons(response.data.results)
         api.setLoad(false)
         console.log(response)
@@ -30,10 +29,10 @@ const App = () => {
     get()
   }, [])
 
-  if (api.load) return <Load/>
+  if (api.load) return <Load />
 
   return (
-    !api.load && 
+    !api.load &&
     <SectionCard>
       <Head title='Main' description='Tela principal da pokédex' />
       <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
@@ -58,7 +57,6 @@ const App = () => {
         })}
       </Div>
     </SectionCard>
-
   )
 }
 

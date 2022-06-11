@@ -1,8 +1,11 @@
 import React from 'react'
+import { Div } from '../Styles/Style'
 
 const Search = () => {
   return (
-    <div>Search</div>
+    <Div display="flex" justifyContent="center">
+      seacrh
+    </Div>
   )
 }
 

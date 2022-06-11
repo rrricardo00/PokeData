@@ -1,18 +1,22 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Div, Section } from '../Styles/Style'
+import { Api } from '../API/Api'
+import { Div, SectionHeader } from '../Styles/Style'
 import Search from './Search'
 
 const Header = () => {
+
+    const api = React.useContext(Api)
+
     return (
-        <Section display='flex'>
+        <SectionHeader display='flex'>
             <Div>
                 <NavLink to='/' end>Home</NavLink>
             </Div>
             <Div>
                 <Search />
             </Div>
-        </Section>
+        </SectionHeader>
     )
 }
 
