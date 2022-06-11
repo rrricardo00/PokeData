@@ -33,7 +33,8 @@ const Pokemon = () => {
 
   return (
     
-    !api.load && <SectionCard>
+    !api.load && 
+    <SectionCard>
       <Head title='Pokémon' description='Tela principal do pokémon' />
       <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} />
     </SectionCard>

@@ -33,7 +33,8 @@ const App = () => {
   if (api.load) return <Load/>
 
   return (
-    !api.load && <SectionCard>
+    !api.load && 
+    <SectionCard>
       <Head title='Main' description='Tela principal da pokédex' />
       <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
         {pokemons.map((pokemon, index) => {
