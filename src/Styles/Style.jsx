@@ -84,7 +84,8 @@ export const DivCard = styled.div`
   overflow: hidden;
   background: tomato;
   padding: 2px 3px;
-  border-radius: 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   color: #fff;
   width: 25px;
   box-sizing: border-box;
@@ -131,14 +132,12 @@ justify-content: ${({ justifyContent }) => justifyContent};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 z-index: ${({ zIndex }) => zIndex};
 `
-
 export const P = styled.p``
 
 export const Pcard = styled.p`
 margin: 0;
 text-transform: capitalize;
 `
-
 export const LoadWait = styled.div`
   margin: 0 auto;
   width: 50px;
