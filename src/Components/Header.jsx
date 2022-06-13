@@ -9,7 +9,7 @@ const Header = () => {
     const api = React.useContext(Api)
 
     return (
-        <SectionHeader display='flex'>
+        <SectionHeader display='flex' gap="30px">
             <Div>
                 <NavLink className='header-nav' to='/' end>Home</NavLink>
             </Div>
