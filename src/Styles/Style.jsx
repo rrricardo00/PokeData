@@ -19,6 +19,7 @@ const LoadAnimation = keyframes`
 to{transform: rotate(360deg)}
 `
 
+
 export const MainContainer = styled.section`
   width: 800px;
   margin: 0 auto;
@@ -30,10 +31,10 @@ export const MainContainer = styled.section`
 export const Button = styled.a`
   background: transparent;
   border-radius: 3px;
-  border: 2px solid tomato;
-  color: tomato;
-  margin: 0 1em;
-  padding: 0.25em 1em;
+  border: 2px solid #EF5350;
+  color: #EF5350;
+  margin: 0 1rem;
+  padding: 0.25rem 1rem;
   text-decoration: none;
   cursor: pointer;
   &:hover{
@@ -41,6 +42,65 @@ export const Button = styled.a`
       transition: all .2s ease-in-out;
   }
 `
+
+export const SubmitButton = styled.button`
+  cursor: pointer;
+  background: transparent;
+  border-radius: 3px;
+  color: 3761A8;
+  margin: 0 1rem;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 2px 2px 2px #e2e2e2;
+  &:hover{
+      opacity: 50%;
+      transition: all .2s ease-in-out;
+  }
+`
+
+export const Input = styled.input`
+  width: 100%;
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  filter: drop-shadow(2px 2px 2px #c2c2c2);
+`
+
+export const DivInput = styled.div`
+display: ${({ display }) => display};
+flex-direction: ${({ flexDirection }) => flexDirection};
+place-items: ${({ placeItems }) => placeItems};
+gap: ${({ gap }) => gap};
+padding: ${({ padding }) => padding};
+border-radius: ${({ borderRadius }) => borderRadius};
+justify-content: ${({ justifyContent }) => justifyContent};
+grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
+z-index: ${({ zIndex }) => zIndex};
+flex: ${({ flex }) => flex};
+
+&:hover{
+  ${Input}{
+    box-shadow: 2px 2px 5px #3761A8, 4px 4px 10px #3761A8;
+    transition: all .5s ease-in-out;
+  }
+  ${SubmitButton}{
+    border-radius: 2px;
+    border: none;
+    box-shadow: 2px 2px 5px #3761A8, 4px 4px 10px #3761A8;
+    transition: all .5s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+
 export const Img = styled.img`
   display: block;
   width: 260px;
@@ -51,7 +111,6 @@ export const ImgCard = styled.img`
   display: block;
   width: 20px;
   margin-right: 2px;
- 
 `
 
 export const Section = styled.section`
@@ -69,6 +128,7 @@ export const SectionHeader = styled.section`
 display: ${({ display }) => display};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 gap: ${({ gap }) => gap};
+align-items: center;
 position: relative;
 margin: 50px 0;
 >div{
@@ -98,7 +158,7 @@ export const DivCard = styled.div`
   position: absolute;
   bottom: 0;
   overflow: hidden;
-  background: tomato;
+  background: #EF5350;
   padding: 2px 3px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -147,12 +207,13 @@ border-radius: ${({ borderRadius }) => borderRadius};
 justify-content: ${({ justifyContent }) => justifyContent};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 z-index: ${({ zIndex }) => zIndex};
-
+flex: ${({ flex }) => flex};
 @media screen and (max-width: 900px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
 `
 export const P = styled.p``
 

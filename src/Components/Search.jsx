@@ -1,11 +1,22 @@
+import { MagnifyingGlass } from 'phosphor-react'
 import React from 'react'
-import { Div } from '../Styles/Style'
+import { SubmitButton, DivInput, Input } from '../Styles/Style'
 
 const Search = () => {
+
+  const handleSubmit = (event) =>{
+    event.preventDefault()
+    console.log('ok')
+  }
+
   return (
-    <Div display="flex" justifyContent="center">
-      seacrh
-    </Div>
+    <form onSubmit={handleSubmit}>
+      <DivInput display="flex" justifyContent='flex-end'>
+        <Input flex='1'/>
+        <SubmitButton onClick={handleSubmit}><MagnifyingGlass width={48} weight='bold'/></SubmitButton>
+      </DivInput>
+    </form>
+
   )
 }
 

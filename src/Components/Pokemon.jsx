@@ -5,16 +5,18 @@ import { Api } from '../API/Api'
 import { Img, SectionCard } from '../Styles/Style'
 import Head from './Head'
 import Load from './Load'
+import NotFound from './NotFound'
 
 const Pokemon = () => {
 
   const api = React.useContext(Api)
   const index = useParams()
 
+  const [notLoad, setNotLoad] = React.useState(false)
   const [pokemon, setPokemon] = React.useState([])
 
-  React.useEffect(() =>{
-    const get = async() =>{
+  React.useEffect(() => {
+    const get = async () => {
       try {
         api.setLoad(true)
         const response = await axios.get(`${api.get}/${index.id}`)
@@ -24,16 +26,16 @@ const Pokemon = () => {
       } catch (error) {
         console.log(error)
         api.setLoad(false)
+        setNotLoad(true)
       }
     }
     get()
-  },[])
+  }, [])
 
-  if (api.load) return <Load/>
+  if (api.load) return <Load />
+  if (notLoad) return <NotFound/>
 
   return (
-    
-    !api.load && 
     <SectionCard>
       <Head title={pokemon.name} description='Tela principal do pokémon' />
       <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} />

@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <SectionHeader display='flex'>
             <Div>
-                <NavLink to='/' end>Home</NavLink>
+                <NavLink className='header-nav' to='/' end>Home</NavLink>
             </Div>
             <Div>
                 <Search />
