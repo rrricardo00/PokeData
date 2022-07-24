@@ -5,29 +5,42 @@ import { Api } from '../API/Api'
 import { Card, Img, Pcard, SectionCard, DivCard, Div, ImgCard } from '../Styles/Style'
 import Head from './Head'
 import Load from './Load'
+import LoadMore from './LoadMore/LoadMore'
 
 
 const App = () => {
 
   const api = React.useContext(Api)
 
+  const [limit, setLimit] = React.useState(12)
   const [pokemons, setPokemons] = React.useState([])
 
   React.useEffect(() => {
+    let cancel
     const get = async () => {
       try {
         api.setLoad(true)
-        const response = await axios.get(`${api.get}?limit=${api.limit}`)
+        console.log(api.load)
+        const response = await axios({
+          method: 'GET',
+          url: `${api.get}?limit=${limit}`,
+          cancelToken: new axios.CancelToken(c => cancel = c)
+        })
         setPokemons(response.data.results)
         api.setLoad(false)
         console.log(response)
+        console.log(api.load)
       } catch (error) {
-        console.log(error)
         api.setLoad(false)
       }
     }
     get()
-  }, [])
+    return () => {
+      get()
+      cancel()
+    }
+
+  }, [limit])
 
   if (api.load) return <Load />
 
@@ -38,7 +51,7 @@ const App = () => {
       <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
         {pokemons.map((pokemon, index) => {
           return (
-            <Link to={`pokemon/${index + 1}`} key={index}>
+            <Link to={`pokemon/${pokemon.name}`} key={index} target="_blank" rel="noopener noreferrer">
               <Card>
                 <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg`} />
                 <DivCard>
@@ -55,6 +68,9 @@ const App = () => {
             </Link>
           )
         })}
+      </Div>
+      <Div display="flex" margin="20px 0 20px 0" justifyContent="center">
+        <LoadMore disabled={false} funct={setLimit} functionValue={limit}>Load More +</LoadMore>
       </Div>
     </SectionCard>
   )

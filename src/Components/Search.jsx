@@ -12,7 +12,7 @@ const Search = () => {
   return (
     <form onSubmit={handleSubmit}>
       <DivInput display="flex" justifyContent='flex-end' gap="30px">
-        <Input flex='1'/>
+        <Input placeholder='Search ID or Name' flex='1'/>
         <SubmitButton onClick={handleSubmit}><MagnifyingGlass width={48} weight='bold'/></SubmitButton>
       </DivInput>
     </form>

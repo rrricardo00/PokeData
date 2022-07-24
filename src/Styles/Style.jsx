@@ -145,6 +145,9 @@ export const SectionCard = styled.section`
 display: ${({ display }) => display};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 gap: ${({ gap }) => gap};
+flex-direction: ${({ flexDirection }) => flexDirection};
+justify-content: center;
+align-items: center;
 position: relative;
 animation: ${EnterAnimation} .6s linear forwards;
 @media screen and (max-width: 900px) {
@@ -208,6 +211,7 @@ justify-content: ${({ justifyContent }) => justifyContent};
 grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 z-index: ${({ zIndex }) => zIndex};
 flex: ${({ flex }) => flex};
+margin: ${({ margin }) => margin};
 @media screen and (max-width: 900px) {
     display: flex;
     flex-direction: column;
