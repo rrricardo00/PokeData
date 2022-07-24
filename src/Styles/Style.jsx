@@ -171,6 +171,14 @@ export const DivCard = styled.div`
   transition: all .3s ease-in-out;
   animation: ${NotAnimation} .3s linear forwards;
   opacity: 0;
+
+  @media screen and (max-width: 900px){
+      animation: none;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      opacity: .8;
+  }
 `
 
 export const Card = styled.div`
@@ -183,6 +191,10 @@ border-radius: 4px;
 filter: drop-shadow(2px 2px 3px #3761A8);
 box-shadow: 1px 1px 3px #e2e2e2;
 
+@media screen and (max-width: 900px){
+  box-shadow: inset 0px 0px 0px 3px #e2e2e2
+}
+
 &:hover{
   box-shadow:inset 2px 2px 10px #3761A8, 4px 4px 20px #3761A8;
   transform: scale(1.1);
@@ -194,10 +206,13 @@ box-shadow: 1px 1px 3px #e2e2e2;
     display: flex;
     justify-content: center;
     animation: ${Animation} .3s linear forwards;
+    
   }
   p{
     margin: 0;
   }
+
+ 
 }
 `
 export const Div = styled.div`

@@ -51,7 +51,7 @@ const App = () => {
       <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
         {pokemons.map((pokemon, index) => {
           return (
-            <Link to={`pokemon/${pokemon.name}`} key={index} target="_blank" rel="noopener noreferrer">
+            <Link to={`pokemon/${pokemon.name}`} key={index}>
               <Card>
                 <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg`} />
                 <DivCard>
