@@ -69,7 +69,7 @@ const App = () => {
           )
         })}
       </Div>
-      <Div display="flex" margin="20px 0 20px 0" justifyContent="center">
+      <Div display="flex" margin="40px 0 20px 0" justifyContent="center">
         <LoadMore disabled={false} funct={setLimit} functionValue={limit}>Load More +</LoadMore>
       </Div>
     </SectionCard>
