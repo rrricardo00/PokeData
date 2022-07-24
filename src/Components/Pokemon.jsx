@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Api } from '../API/Api'
-import { Img, SectionCard } from '../Styles/Style'
+import { Img, SectionCard, Div } from '../Styles/Style'
 import Head from './Head'
 import Load from './Load'
 import NotFound from './NotFound'
@@ -16,6 +16,7 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = React.useState([])
   const [abilities, setAbilities] = React.useState([])
   const [moves, setMoves] = React.useState([])
+  const [types, setTypes] = React.useState([])
 
   React.useEffect(() => {
     const get = async () => {
@@ -27,6 +28,7 @@ const Pokemon = () => {
         setPokemon(response.data)
         setAbilities(response.data.abilities)
         setMoves(response.data.moves.slice(0,4))
+        setTypes(response.data.types)
        
         api.setLoad(false)
       } catch (error) {
@@ -45,9 +47,15 @@ const Pokemon = () => {
     <SectionCard display='flex' gap="20px" flexDirection="column">
       <Head title={pokemon.name} description='Tela principal do pokémon' />
       <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} />
+      <Div>
+      {types && 
+      types.map((item) => <Div className={`${item.type.name}`}  key={item.slot}>{item.type.name}</Div>)
+      }
+      </Div>
       {abilities &&
       abilities.map((item, index) => <p key={index}>{item.ability.name}</p>)
       }
+      
     </SectionCard>
   )
 }
