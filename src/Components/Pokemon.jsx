@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Api } from '../API/Api'
-import { Img, SectionCard, Div } from '../Styles/Style'
+import { ImgSingle, SectionCard, Div } from '../Styles/Style'
 import Head from './Head'
 import Load from './Load'
 import NotFound from './NotFound'
@@ -46,8 +46,8 @@ const Pokemon = () => {
   return (
     <SectionCard display='flex' gap="20px" flexDirection="column">
       <Head title={pokemon.name} description='Tela principal do pokémon' />
-      <Img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} />
-      <Div>
+      <ImgSingle src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} />
+      <Div display="flex" gap="10px"  >
       {types && 
       types.map((item) => <Div className={`${item.type.name}`}  key={item.slot}>{item.type.name}</Div>)
       }

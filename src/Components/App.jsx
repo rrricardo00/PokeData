@@ -48,7 +48,7 @@ const App = () => {
     !api.load &&
     <SectionCard>
       <Head title='Main' description='Tela principal da pokédex' />
-      <Div display="grid" gridTemplateColumns="repeat(3, 1fr)" gap="30px">
+      <Div display="grid" gridTemplateColumns="repeat(auto-fill, minmax(240px,1fr))" gap="30px" flexDirectionMobile="column">
         {pokemons.map((pokemon, index) => {
           return (
             <Link to={`pokemon/${pokemon.name}`} key={index}>

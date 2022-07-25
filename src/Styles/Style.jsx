@@ -103,8 +103,17 @@ flex: ${({ flex }) => flex};
 
 export const Img = styled.img`
   display: block;
-  width: 260px;
+  width: 100%;
   height: 260px;
+`
+
+export const ImgSingle = styled.img`
+  display: block;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 4px 2px 15px #eee, inset -4px 2px 15px #eee;
 `
 
 export const ImgCard = styled.img`
@@ -229,7 +238,7 @@ flex: ${({ flex }) => flex};
 margin: ${({ margin }) => margin};
 @media screen and (max-width: 900px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: ${({ flexDirectionMobile }) => flexDirectionMobile};
     align-items: center;
   }
 
