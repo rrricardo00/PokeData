@@ -2,6 +2,15 @@
     --primary-color: #fff;
 }
 
+p, h1{
+    margin: 0;
+}
+
+h1{
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
 html {
     margin: 0;
     padding: 0;

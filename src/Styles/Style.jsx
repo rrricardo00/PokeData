@@ -105,6 +105,9 @@ export const Img = styled.img`
   display: block;
   width: 100%;
   height: 260px;
+  @media screen and (max-width: 900px) {
+    width: 260px;
+  }
 `
 
 export const ImgSingle = styled.img`
@@ -236,6 +239,9 @@ grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
 z-index: ${({ zIndex }) => zIndex};
 flex: ${({ flex }) => flex};
 margin: ${({ margin }) => margin};
+width: ${({ width }) => width};
+align-items: ${({ alignItems }) => alignItems} !important;
+text-align: ${({ textAlign }) => textAlign};
 @media screen and (max-width: 900px) {
     display: flex;
     flex-direction: ${({ flexDirectionMobile }) => flexDirectionMobile};
@@ -243,6 +249,11 @@ margin: ${({ margin }) => margin};
   }
 
 `
+
+export const MoveDiv = styled.div`
+width: 100%;
+`
+
 export const P = styled.p``
 
 export const Pcard = styled.p`
