@@ -252,6 +252,9 @@ text-align: ${({ textAlign }) => textAlign};
 
 export const MoveDiv = styled.div`
 width: 100%;
+p, h2{
+  text-transform: capitalize;
+}
 `
 
 export const P = styled.p``

@@ -53,7 +53,7 @@ const Pokemon = () => {
           types.map((item) => <Div className={`${item.type.name}`} key={item.slot}>{item.type.name}</Div>)
         }
       </Div>
-      <Div display="flex" width="100%" justifyContent="space-around" alignItems="initial" flexDirectionMobile="column" margin="20px 0 20px 0" textAlign="center">
+      <Div display="flex" width="100%" gap="20px" justifyContent="space-around" alignItems="initial" flexDirectionMobile="column" margin="20px 0 20px 0" textAlign="center">
         <Div display="flex" flexDirection="column" flex="1" alignItems="center">
           <h2>Abilities</h2>
           <MoveDiv>

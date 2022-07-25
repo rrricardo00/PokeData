@@ -9,6 +9,7 @@ p, h1{
 h1{
     text-transform: capitalize;
     font-size: 2rem;
+    color: #ccc;
 }
 
 html {
